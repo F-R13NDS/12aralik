@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.js" integrity="sha512-CiKQCmN86Y1I8Ewkt2gGnSNmsiVrS9Ez5MoudCBhTiBJScg+GjA9OlKdaeI0IuxdCl43Fs5x5zpeew2hfOatOA==" crossorigin="anonymous"></script> 
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #131212;
+		}
+		
+		.dis{
+			background-color:  #06090f;
+			height: 100%;			
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 10%;
+			right: 10%;
+			overflow: hidden;
+		}
+		.cizgi{
+			border-right: double #c0c0c0 1px;
+			border-left: double #c0c0c0 1px;
+			margin-right: 8%;
+			margin-left: 8%;
+
+		}
+		.sagkisim{
+			float: right;			
+			width: 8%;
+
+		}
+		.ic{
+			
+			color: #ffffff;
+			margin-right: 5%;
+			margin-top: 0;
+			margin-left: 3%;
+		}
+		.ic li{
+			list-style-type: none;
+			float: left;
+			margin-right: 3%;
+			margin-left: 2%;
+			margin-top: 5%;
+		}
+		.cizgi img
+		{
+			margin-top: 1%;
+			margin-bottom: 1%;
+			margin-left: 0;
+			float: right;
+			padding: 0 0 1% 0;
+			width: 40%;
+			height: 40%;
+			
+			
+		}
+		.sagkisim img{
+			width: 50%;
+			height: 50%;
+			margin-left: auto;
+
+		}
+		big{
+			float: left;
+			font-size: 25px;
+			margin-right: 5%;
+			margin-left: 3%;
+			margin-top: 5%;
+			display: block;
+			
+		}
+		.ic b{
+			
+			font-size: 40px;
+			margin-right: 5%;
+			margin-left: 3%;
+			margin-top: 2%;
+		}
+		.icb
+		{
+			font-size: 18px;
+		}
+		a{
+			
+			
+			color: #000000;
+			text-decoration:none;
+			text-align: center;	
+			line-height:20px;
+			width: 300px;
+
+			
+		}
+		.buton{
+			width: 120px;
+			text-align: center;
+			padding: 15px;
+			display: block;
+			border-bottom-right-radius:40px;
+			border-bottom-left-radius:40px;
+			border-top-left-radius:40px;
+			border-top-right-radius:40px;
+			font-size:18px;
+			margin:20px;
+			margin-left: 30px;
+			background-color: #e3e3e3;
+			border:double #000000 1px;
+			cursor: pointer;
+		}
+		.haklar{
+			float: bottom;
+			list-style-type: none;
+			font-size: 18px;
+			margin-top: 9%;	
+			text-align: center;
+			padding-bottom: 10%;
+
+		}
+		footer{
+			float bottom;
+			list-style-type: none;
+			width: 100%;
+			margin-right: 25%;
+			text-align: center;	
+			margin-top: 12%;
+			
+
+			
+		}
+		.alt{
+
+			padding-bottom: 50px;
+			
+		
+		}
+		.alt li{
+			font-family:"Bahnschrift";
+		}
+		
+        .person-bg{
+           position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            background-color: #000;
+            opacity: 0.9;
+        }
+
+        .person-bg.kapali{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            background-color: #000;
+            opacity: 0;
+        }
+
+        .inf-p{
+            position: absolute;
+            margin-top: 40%;
+     
+        }
+		
+        .team-ul{
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        
+        
+        .dairesel{
+            border-radius: 50%;
+            overflow: hidden;
+            width: 60%;
+            height: 50%;
+            margin-left: 50px;
+        }
+
+        .team-pic{
+            display: block;
+            width: 100%;
+            height: 100%;       
+        }
+
+        .team-list{
+            color: #ffffff;
+            margin-left: -80%;
+        }
+
+        .white{
+            color:#ffffff;
+        }
+
+        .float{
+            float:left;
+            margin-top: 10%;
+            margin-left: 3%;
+            max-width: 150px;
+            margin: 100 auto;
+            padding-left: 80px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .dairesel{
+                border-radius: 50%;
+                overflow: hidden;
+                width: 40%;
+                height: 50%;
+                margin-left: 50px;
+            }
+        }
+		
+
+	</style>
+</head>
+<body ng-app="CVApp" ng-controller="CVController">
+
+<div class="dis">
+
+    <div class="ac-kapa person-bg" ng-if="ekipEkran==1">
+        <div class="card float" style="width: 18rem;" ng-repeat="item in ekip">
+            <div class="dairesel">
+                <img class="card-img-top team-pic" src="{{item.url}}" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <a class="card-text white" href="kisiler.html">{{item.isim}}</p>
+            </div>
+          </div>
+    </div>
+
+	<div class="sagkisim" align="center">
+		<a href=""><img src="dil.png"></a>
+		<a href="" style="writing-mode: vertical-rl; color:#9a9a9a; transform: rotate(180deg); padding-right: 38%;padding-bottom: 160%; ">Linkedin</a>
+		<a href="" style="writing-mode: vertical-rl; color:#9a9a9a; transform: rotate(180deg); padding-right: 38%;padding-bottom: 20%;">Instagram</a>
+		<a href="" style="writing-mode: vertical-rl; color:#9a9a9a; transform: rotate(180deg); padding-right: 38%;padding-bottom: 20%;">Github</a>
+		<br></br>
+		<br></br>
+		<br></br>
+	</div>
+	<div class="cizgi" >
+		<img src="Cizim.png" align="right"  height="450">		
+	<div class="ic">
+		<a href=""><li style="color: #ff9d54; ">X Team</li></a>
+		<a href="" ng-click="ekipEkran= 1"><li style="color: #9a9a9a;">Ekibimiz</li></a>
+		
+		
+		<br></br><br></br><br></br><br></br><br>
+		<big style="color: #9a9a9a;">Hakkımızda</big>
+		<br><br>
+		<big style="color: #ffffff; margin-left: -18%; font-size: 45px;">Team X</big>
+		<br><br><br><br><br><br>
+		<b class="icb" style="color: #666666; font-size: 14px;">Takımımız Manisa Celal Bayar Üniversitesi Hasan Ferdi Turgutlu Teknoloji Fakültesi yazılım mühendisliği öğrencileri tarafından oluşmaktadır.
+            Amacımız üniversitemiz bünyesinde ve üniversiteler arası yarışmalara katılarak tecrübe kazanmak ve derece elde etmek.
+            Aynı zamanda takım bünyesindeki mühendis adaylarımıza proje yönetimi ve takım çalışması deneyimini kazandırmak.</b>
+		<br><br><br>
+		<div class="buton" ><a href="#" ng-click="ekipEkran= 1">Ekibimiz</a></div>
+		
+		
+		
+	</div>
+	<footer><div align="center" ><div class="alt"><li style="color: #faa61a; text-align: center;">©2020 x-teamxx@gmail.com</li></div></div></footer>
+    </div>
+    
+    
+</div>
+</body>
+</html>
