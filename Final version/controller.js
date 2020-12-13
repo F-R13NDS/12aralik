@@ -11,7 +11,7 @@ app.controller('CVController', function($scope){
         {sayi: '5', isim:'Umut Can Altıntaş', url: 'umut.png', sayfa: 'umut.html'},
         {sayi: '6', isim:'Berna Bayraktar', url: 'berna.png', sayfa: 'berna.html'},
         {sayi: '7', isim:'Ayşe Aleyna Yavuz', url: 'aleyna.png', sayfa: 'aleyna.html'},
-        {sayi: '8', isim:'Tarık Kıldırıç', url: 'tarık.png', sayfa: 'tarik.html'},
+        {sayi: '8', isim:'Tarık Kıldırıç', url: 'tarik.png', sayfa: 'tarik.html'},
 
         
     ];
